@@ -4,7 +4,7 @@
 /*
  MIT License
 
-Copyright (c) 2021 Gary L. Mullen-Schultz
+Copyright (c) 2021 Matt S. 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ using System.Net.Http;
 using Azure.Security.KeyVault.Secrets;
 using Azure.Identity;
 
-namespace Gary.Function
+namespace MS.Function
 {
     // This function acts as a proxy between the Azure portal and GitHub to allow private repos to be exposed for resource creation.
     public static class HttpTrigger
@@ -53,7 +53,7 @@ namespace Gary.Function
             log.LogInformation("C# HTTP trigger function processed a request.");
             string code = null;
 
-            string keyVaultURL = "https://keyvaultgary.vault.azure.net/";
+            string keyVaultURL = "https://kv-mslab-ghaccess.vault.azure.net/";
             var kvClient = new SecretClient(new Uri(keyVaultURL), new DefaultAzureCredential());
             log.LogInformation("kvClient = " + kvClient.ToString());
             KeyVaultSecret secret = kvClient.GetSecret(secretName);
