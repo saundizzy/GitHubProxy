@@ -53,7 +53,7 @@ namespace MS.Function
             log.LogInformation("C# HTTP trigger function processed a request.");
             string code = null;
 
-            string keyVaultURL = "https://kv-mslab-ghaccess.vault.azure.net/";
+            string keyVaultURL = "https://net-prd-kv-ghaccess.vault.azure.net/";
             var kvClient = new SecretClient(new Uri(keyVaultURL), new DefaultAzureCredential());
             log.LogInformation("kvClient = " + kvClient.ToString());
             KeyVaultSecret secret = kvClient.GetSecret(secretName);
